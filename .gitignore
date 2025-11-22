@@ -1,0 +1,55 @@
+### Gradle ###
+.gradle/
+build/
+bin/
+out/
+!gradle/wrapper/gradle-wrapper.jar
+!gradlew
+!gradlew.bat
+
+### Java ###
+*.class
+*.log
+*.jar
+*.war
+*.ear
+
+### IntelliJ IDEA ###
+.idea/
+*.iml
+*.ipr
+*.iws
+
+### Eclipse ###
+.project
+.classpath
+.settings/
+
+### VSCode ###
+.vscode/
+
+### Nix / direnv ###
+.direnv/
+.envrc
+
+### OS-specific ###
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+### Logs ###
+*.log
+
+### Your app ###
+# do not track packaged artifacts
+*.app
+*.exe
+*.deb
+*.rpm
+*.dmg
+
+### JPackage output ###
+app/
+dist/
