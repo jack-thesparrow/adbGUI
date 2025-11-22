@@ -1,0 +1,19 @@
+
+plugins {
+    id 'application'
+}
+
+application {
+    mainClass = 'app.adbgui.App'
+}
+
+tasks.register('packageApp', Exec) {
+    dependsOn build
+    commandLine 'jpackage',
+            '--name', 'ADBGui',
+            '--input', 'build/libs',
+            '--main-jar', 'adb-gui.jar',
+            '--type', 'app-image',
+            '--icon', 'icon.png'
+}
+
