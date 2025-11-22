@@ -1,4 +1,3 @@
-
 plugins {
     id 'application'
 }
@@ -7,13 +6,21 @@ application {
     mainClass = 'app.adbgui.App'
 }
 
-tasks.register('packageApp', Exec) {
-    dependsOn build
-    commandLine 'jpackage',
-            '--name', 'ADBGui',
-            '--input', 'build/libs',
-            '--main-jar', 'adb-gui.jar',
-            '--type', 'app-image',
-            '--icon', 'icon.png'
+tasks.register("packageApp", Exec) {
+    dependsOn("build")
+
+    doFirst {
+        println("Packaging using jpackage")
+    }
+
+    commandLine(
+            "jpackage",
+            "--name", "ADB-GUI",
+            "--input", "build/libs",
+            "--main-jar", "adbgui.jar",
+            "--type", "app-image",
+            "--icon", "src/main/resources/icons/app-icon.png"
+    )
 }
+
 
